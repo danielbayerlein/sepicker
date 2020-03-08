@@ -45,9 +45,6 @@ class Elster:
             (self.datetime, entry.name, entry.formatter(value))
         )
 
-        # print(msg.data)
-        # print(self.datetime, entry.name, value, entry.formatter(value))
-
     def is_done(self):
         return len(self.values) == len(self.frames)
 
