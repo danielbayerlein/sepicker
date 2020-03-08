@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+
+PARENT_FOLDER = os.path.realpath(
+    os.path.join(
+        os.path.dirname(os.path.realpath(__file__)),
+        '..'
+    )
+)
+sys.path.insert(0, PARENT_FOLDER)
+
+from sepicker.__main__ import main  # noqa: E402
+
+main()

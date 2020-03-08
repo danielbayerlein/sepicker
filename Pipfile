@@ -1,0 +1,26 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+flake8-bandit = "*"
+flake8-bugbear = "*"
+pep8-naming = "*"
+pytest = "*"
+pytest-cov = "*"
+
+[packages]
+python-can = "*"
+pyyaml = "*"
+mysql-connector = "*"
+python-dotenv = "*"
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+lint = "flake8"
+start = "python3 -m sepicker"
+test = "pytest"

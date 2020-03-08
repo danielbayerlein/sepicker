@@ -1,0 +1,58 @@
+can:
+  interface: can0
+  sender: 680
+
+data:
+  - name: ISTTEMPERATUR_HK_1
+    index: 180.02ca
+    format: dec_val
+  - name: SOLLTEMPERATUR_HK_1
+    index: 180.01d7
+    format: dec_val
+  - name: ISTTEMPERATUR_HK_2
+    index: 601.000f
+    format: dec_val
+  - name: SOLLTEMPERATUR_HK_2
+    index: 601.0004
+    format: dec_val
+  - name: AUSSENTEMPERATUR
+    index: 180.000c
+    format: dec_val
+  - name: VORLAUFISTTEMPERATUR_WP
+    index: 180.06a1
+    format: dec_val
+  - name: VORLAUFISTTEMPERATUR_NHZ
+    index: 180.01d6
+    format: dec_val
+  - name: RÜCKLAUFISTTEMPERATUR
+    index: 180.0016
+    format: dec_val
+  - name: PUFFERISTTEMPERATUR
+    index: 180.0078
+    format: dec_val
+  - name: PUFFERSOLLTEMPERATUR
+    index: 180.01d5
+    format: dec_val
+  - name: WARMWASSER_ISTTEMPERATUR
+    index: 180.000e
+    format: dec_val
+  - name: WARMWASSER_SOLLTEMPERATUR
+    index: 180.0003
+    format: dec_val
+  - name: QUELLENTEMPERATUR
+    index: 180.01d4
+    format: dec_val
+  # - name: LAUFZEIT_VD_HEIZEN
+  #   index: 180.07fc
+  # - name: LAUFZEIT_VD_WASSER
+  #   index: 180.0802
+  - name: FEHLER
+    index: 180.0001
+  - name: WP_PUMPENSTATUS
+    index: 180.fdad
+    format: little_endian
+  # - name: STARTS_VERDICHTER
+  #   index:
+  #     - 180.071c
+  #     - 180.071d
+  #   calc: "{0} * 1000 + {1}"
