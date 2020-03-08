@@ -46,9 +46,18 @@
 
 ## Installation
 
-* Download the [latest release](http://github.com/danielbayerlein/sepicker/releases/latest/download/package.zip)
-* Unzip the package via `unzip package.zip`
-* Install the dependencies via `pip3 install -r requirements.txt`
+* Download the [latest release](https://github.com/danielbayerlein/sepicker/releases/latest/download/package.zip)
+  ```bash
+  wget https://github.com/danielbayerlein/sepicker/releases/latest/download/package.zip
+  ```
+* Unzip the package
+  ```bash
+  unzip package.zip
+  ```
+* Install the dependencies
+  ```bash
+  pip3 install -r requirements.txt
+  ```
 
 ### Cron Job
 
