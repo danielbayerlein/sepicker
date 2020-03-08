@@ -7,6 +7,15 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/danielbayerlein/sepicker/actions">
+    <img alt="Actions Status" src="https://github.com/danielbayerlein/sepicker/workflows/CI/badge.svg">
+  </a>
+  <a href="https://dependabot.com">
+    <img alt="Dependabot Status" src="https://api.dependabot.com/badges/status?host=github&repo=danielbayerlein/sepicker">
+  </a>
+</p>
+
+<p align="center">
   <img src="https://user-images.githubusercontent.com/457834/76162079-241b7c80-613a-11ea-9f18-1c380d588635.png" width="600" alt="Dashboard">
 </p>
 
