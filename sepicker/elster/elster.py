@@ -9,11 +9,11 @@ LOGGER = logging.getLogger(__name__)
 class Elster:
     RESPONSE = 0x2
 
-    def __init__(self, config):
-        self.frames = [ElsterFrame(**data) for data in config['data']]
+    def __init__(self, sender, items):
+        self.frames = [ElsterFrame(**item) for item in items]
         self.values = []
         self.datetime = datetime.now()
-        self.sender = int(str(config['can']['sender']), 16)
+        self.sender = int(str(sender), 16)
 
     def listener(self, msg):
         data = msg.data

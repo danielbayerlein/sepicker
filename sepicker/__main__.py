@@ -3,16 +3,21 @@ import logging
 
 from .elster.elster import Elster
 from .interface.can_bus import CanBus
-from .datastore.mysql import save as datastore
-from .config import CONFIG
+from .datastore.mysql import Mysql as Datastore
+from .config import (
+    CAN as CAN_CONFIG,
+    DATA,
+    DATABASE as DATABASE_CONFIG,
+    LOG_LEVEL
+)
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=LOG_LEVEL)
 
 
 def main():
-    elster = Elster(CONFIG)
+    elster = Elster(sender=CAN_CONFIG['sender'], items=DATA)
 
-    with CanBus(**CONFIG['can']) as can_bus:
+    with CanBus(**CAN_CONFIG) as can_bus:
         can_bus.notifier(elster.listener)
 
         for frame in elster.frames:
@@ -30,7 +35,8 @@ def main():
                 break
 
     # Save result
-    datastore(elster.values)
+    with Datastore(**DATABASE_CONFIG) as db:
+        db.save(elster.values)
 
 
 if __name__ == '__main__':
