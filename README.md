@@ -42,6 +42,7 @@
 * [Python 3.7](https://www.python.org)
 * [MySQL](https://www.mysql.com/)
 * [Grafana](https://grafana.com/) *(optional)*
+* [Raspberry Pi](https://www.raspberrypi.org) + [CANable](https://canable.io) *(or similar devices)*
 
 ## Installation
 
