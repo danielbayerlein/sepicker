@@ -2,6 +2,24 @@
 
 📊 Monitoring for the STIEBEL ELTRON Heat Pump
 
+## Table of Contents
+
+* [Requirements](#requirements)
+* [Installation](#installation)
+  * [Cron Job](#cron-job)
+  * [Database](#database)
+  * [Grafana <em>(optional)</em>](#grafana-optional)
+* [Config](#config)
+  * [CAN bus](#can-bus)
+    * [Example](#example)
+    * [Description](#description)
+  * [Data](#data)
+    * [Example](#example-1)
+    * [Description](#description-1)
+  * [Database](#database-1)
+* [Resources](#resources)
+* [License](#license)
+
 ## Requirements
 
 * [Python 3.7](https://www.python.org)
