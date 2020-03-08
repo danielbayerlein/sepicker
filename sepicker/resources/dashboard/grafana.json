@@ -102,7 +102,7 @@
           ],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT COUNT(*)\nFROM (\n  SELECT\n    $__timeGroup(timestamp,$__interval)\n  FROM canable\n  WHERE\n    $__timeFilter(timestamp) AND\n    name = 'WP_PUMPENSTATUS' AND\n    value = '1'\n  GROUP BY 1\n) AS entries",
+          "rawSql": "SELECT COUNT(*)\nFROM (\n  SELECT\n    $__timeGroup(timestamp,$__interval)\n  FROM sepicker\n  WHERE\n    $__timeFilter(timestamp) AND\n    name = 'WP_PUMPENSTATUS' AND\n    value = '1'\n  GROUP BY 1\n) AS entries",
           "refId": "A",
           "select": [
             [
@@ -120,7 +120,7 @@
               }
             ]
           ],
-          "table": "canable",
+          "table": "sepicker",
           "timeColumn": "timestamp",
           "timeColumnType": "timestamp",
           "where": [
@@ -239,7 +239,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM canable\nWHERE\n  name = 'FEHLER' AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM sepicker\nWHERE\n  name = 'FEHLER' AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
           "refId": "A",
           "select": [
             [
@@ -251,7 +251,7 @@
               }
             ]
           ],
-          "table": "canable",
+          "table": "sepicker",
           "timeColumn": "timestamp",
           "timeColumnType": "timestamp",
           "where": [
@@ -341,7 +341,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM canable\nWHERE\n  name IN('ISTTEMPERATUR_HK_1', 'SOLLTEMPERATUR_HK_1', 'ISTTEMPERATUR_HK_2', 'SOLLTEMPERATUR_HK_2', 'AUSSENTEMPERATUR', 'VORLAUFISTTEMPERATUR_WP', 'VORLAUFISTTEMPERATUR_NHZ', 'RÜCKLAUFISTTEMPERATUR', 'PUFFERISTTEMPERATUR', 'PUFFERSOLLTEMPERATUR', 'WARMWASSER_ISTTEMPERATUR', 'WARMWASSER_SOLLTEMPERATUR', 'QUELLENTEMPERATUR', 'WP_PUMPENSTATUS') AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM sepicker\nWHERE\n  name IN('ISTTEMPERATUR_HK_1', 'SOLLTEMPERATUR_HK_1', 'ISTTEMPERATUR_HK_2', 'SOLLTEMPERATUR_HK_2', 'AUSSENTEMPERATUR', 'VORLAUFISTTEMPERATUR_WP', 'VORLAUFISTTEMPERATUR_NHZ', 'RÜCKLAUFISTTEMPERATUR', 'PUFFERISTTEMPERATUR', 'PUFFERSOLLTEMPERATUR', 'WARMWASSER_ISTTEMPERATUR', 'WARMWASSER_SOLLTEMPERATUR', 'QUELLENTEMPERATUR', 'WP_PUMPENSTATUS') AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
           "refId": "A",
           "select": [
             [
@@ -353,7 +353,7 @@
               }
             ]
           ],
-          "table": "canable",
+          "table": "sepicker",
           "timeColumn": "timestamp",
           "timeColumnType": "timestamp",
           "where": [
@@ -455,7 +455,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM canable\nWHERE\n  name IN('VORLAUFISTTEMPERATUR_WP', 'RÜCKLAUFISTTEMPERATUR') AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM sepicker\nWHERE\n  name IN('VORLAUFISTTEMPERATUR_WP', 'RÜCKLAUFISTTEMPERATUR') AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
           "refId": "A",
           "select": [
             [
@@ -467,7 +467,7 @@
               }
             ]
           ],
-          "table": "canable",
+          "table": "sepicker",
           "timeColumn": "timestamp",
           "timeColumnType": "timestamp",
           "where": [
@@ -569,7 +569,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM canable\nWHERE\n  name IN('WARMWASSER_ISTTEMPERATUR', 'WARMWASSER_SOLLTEMPERATUR') AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM sepicker\nWHERE\n  name IN('WARMWASSER_ISTTEMPERATUR', 'WARMWASSER_SOLLTEMPERATUR') AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
           "refId": "A",
           "select": [
             [
@@ -581,7 +581,7 @@
               }
             ]
           ],
-          "table": "canable",
+          "table": "sepicker",
           "timeColumn": "timestamp",
           "timeColumnType": "timestamp",
           "where": [
@@ -681,7 +681,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM canable\nWHERE\n  name IN('PUFFERISTTEMPERATUR', 'PUFFERSOLLTEMPERATUR') AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM sepicker\nWHERE\n  name IN('PUFFERISTTEMPERATUR', 'PUFFERSOLLTEMPERATUR') AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
           "refId": "A",
           "select": [
             [
@@ -693,7 +693,7 @@
               }
             ]
           ],
-          "table": "canable",
+          "table": "sepicker",
           "timeColumn": "timestamp",
           "timeColumnType": "timestamp",
           "where": [
@@ -796,7 +796,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM canable\nWHERE\n  name IN(\"QUELLENTEMPERATUR\", \"AUSSENTEMPERATUR\") AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM sepicker\nWHERE\n  name IN(\"QUELLENTEMPERATUR\", \"AUSSENTEMPERATUR\") AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
           "refId": "A",
           "select": [
             [
@@ -808,7 +808,7 @@
               }
             ]
           ],
-          "table": "canable",
+          "table": "sepicker",
           "timeColumn": "timestamp",
           "timeColumnType": "timestamp",
           "where": [
@@ -908,7 +908,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM canable\nWHERE\n  name IN('ISTTEMPERATUR_HK_2', 'SOLLTEMPERATUR_HK_2') AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM sepicker\nWHERE\n  name IN('ISTTEMPERATUR_HK_2', 'SOLLTEMPERATUR_HK_2') AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
           "refId": "A",
           "select": [
             [
@@ -920,7 +920,7 @@
               }
             ]
           ],
-          "table": "canable",
+          "table": "sepicker",
           "timeColumn": "timestamp",
           "timeColumnType": "timestamp",
           "where": [
@@ -1024,7 +1024,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM canable\nWHERE\n  name = \"WP_PUMPENSTATUS\" AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(TIMESTAMP) AS time_sec,\n  0 + value AS value,\n  name AS metric\nFROM sepicker\nWHERE\n  name = \"WP_PUMPENSTATUS\" AND\n  $__timeFilter(timestamp)\nORDER BY timestamp",
           "refId": "A",
           "select": [
             [
@@ -1036,7 +1036,7 @@
               }
             ]
           ],
-          "table": "canable",
+          "table": "sepicker",
           "timeColumn": "timestamp",
           "timeColumnType": "timestamp",
           "where": [

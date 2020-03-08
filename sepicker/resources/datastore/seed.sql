@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `canable` (
+CREATE TABLE IF NOT EXISTS `sepicker` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `name` varchar(255) NOT NULL,

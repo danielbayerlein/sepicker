@@ -14,12 +14,9 @@ def save(values):
     )
     cursor = connection.cursor()
     cursor.executemany(
-        'INSERT INTO canable_test(timestamp, name, value) VALUES(%s, %s, %s)',
+        'INSERT INTO sepicker(timestamp, name, value) VALUES(%s, %s, %s)',
         values
     )
     connection.commit()
     cursor.close()
     connection.close()
-
-# import traceback
-# LOG.warning('Unable to run Lambda function on API Gateway message: %s %s' % (e, traceback.format_exc()))
