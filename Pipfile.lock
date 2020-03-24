@@ -210,11 +210,11 @@
         },
         "pep8-naming": {
             "hashes": [
-                "sha256:45f330db8fcfb0fba57458c77385e288e7a3be1d01e8ea4268263ef677ceea5f",
-                "sha256:a33d38177056321a167decd6ba70b890856ba5025f0a8eca6a3eda607da93caf"
+                "sha256:5d9f1056cb9427ce344e98d1a7f5665710e2f20f748438e308995852cfa24164",
+                "sha256:f3b4a5f9dd72b991bf7d8e2a341d2e1aa3a884a769b5aaac4f56825c1763bf3a"
             ],
             "index": "pypi",
-            "version": "==0.9.1"
+            "version": "==0.10.0"
         },
         "pluggy": {
             "hashes": [
