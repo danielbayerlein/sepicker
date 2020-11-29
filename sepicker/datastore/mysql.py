@@ -31,3 +31,7 @@ class Mysql:
             'INSERT INTO sepicker(timestamp, name, value) VALUES(%s, %s, %s)',
             values
         )
+
+
+# import traceback
+# LOG.warning('Unable to run Lambda function on API Gateway message: %s %s' % (e, traceback.format_exc()))

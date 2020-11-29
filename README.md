@@ -46,13 +46,13 @@
 
 ## Installation
 
-* Download the [latest release](https://github.com/danielbayerlein/sepicker/releases/latest/download/package.zip)
+* Download the [latest release](https://github.com/danielbayerlein/sepicker/releases/latest/download/sepicker.zip)
   ```bash
-  wget https://github.com/danielbayerlein/sepicker/releases/latest/download/package.zip
+  wget https://github.com/danielbayerlein/sepicker/releases/latest/download/sepicker.zip
   ```
 * Unzip the package
   ```bash
-  unzip package.zip
+  unzip sepicker.zip
   ```
 * Install the dependencies
   ```bash

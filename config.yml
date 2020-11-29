@@ -42,8 +42,17 @@ data:
   - name: QUELLENTEMPERATUR
     index: 180.01d4
     format: dec_val
+  # - name: LAUFZEIT_VD_HEIZEN
+  #   index: 180.07fc
+  # - name: LAUFZEIT_VD_WASSER
+  #   index: 180.0802
   - name: FEHLER
     index: 180.0001
   - name: WP_PUMPENSTATUS
     index: 180.fdad
     format: little_endian
+  # - name: STARTS_VERDICHTER
+  #   index:
+  #     - 180.071c
+  #     - 180.071d
+  #   calc: "{0} * 1000 + {1}"
