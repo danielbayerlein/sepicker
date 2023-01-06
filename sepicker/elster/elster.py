@@ -18,7 +18,7 @@ class Elster:
     def listener(self, msg):
         data = msg.data
 
-        receiver = (data[0] & 0xf0) * 8 + (data[1] & 0x0f)
+        receiver = (data[0] & 0xf0) * 8 + (data[1] & 0x7f)
         type = data[0] & 0x0f
 
         if type != self.RESPONSE or \
