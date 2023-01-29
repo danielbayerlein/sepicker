@@ -266,11 +266,11 @@
         },
         "flake8-bugbear": {
             "hashes": [
-                "sha256:6ad0ab754507319060695e2f2be80e6d8977cfcea082293089a9226276bd825d",
-                "sha256:a6708608965c9e0de5fff13904fed82e0ba21ac929fe4896459226a797e11cd5"
+                "sha256:04a115e5f9c8e87c38bdbbcdf9f58223ffe05469c07c9a7bd8633330bc4d078b",
+                "sha256:55902ab5a48c5ea53d8689ecd146eda548e72f2724192b9c1d68f6d975d13c06"
             ],
             "index": "pypi",
-            "version": "==22.10.27"
+            "version": "==23.1.20"
         },
         "flake8-polyfill": {
             "hashes": [
