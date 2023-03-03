@@ -10,9 +10,6 @@
   <a href="https://github.com/danielbayerlein/sepicker/actions">
     <img alt="Actions Status" src="https://github.com/danielbayerlein/sepicker/workflows/CI/badge.svg">
   </a>
-  <a href="https://dependabot.com">
-    <img alt="Dependabot Status" src="https://api.dependabot.com/badges/status?host=github&repo=danielbayerlein/sepicker">
-  </a>
 </p>
 
 <p align="center">
@@ -21,47 +18,47 @@
 
 ## Table of Contents
 
-* [Requirements](#requirements)
-* [Installation](#installation)
-  * [Cron Job](#cron-job)
-  * [Database](#database)
-  * [Grafana <em>(optional)</em>](#grafana-optional)
-* [Config](#config)
-  * [CAN bus](#can-bus)
-    * [Example](#example)
-    * [Description](#description)
-  * [Data](#data)
-    * [Example](#example-1)
-    * [Description](#description-1)
-  * [Database](#database-1)
-* [Resources](#resources)
-* [License](#license)
+- [Requirements](#requirements)
+- [Installation](#installation)
+  - [Cron Job](#cron-job)
+  - [Database](#database)
+  - [Grafana <em>(optional)</em>](#grafana-optional)
+- [Config](#config)
+  - [CAN bus](#can-bus)
+    - [Example](#example)
+    - [Description](#description)
+  - [Data](#data)
+    - [Example](#example-1)
+    - [Description](#description-1)
+  - [Database](#database-1)
+- [Resources](#resources)
+- [License](#license)
 
 ## Requirements
 
-* [Python 3.7](https://www.python.org)
-* [MySQL](https://www.mysql.com/)
-* [Grafana](https://grafana.com/) *(optional)*
-* [Raspberry Pi](https://www.raspberrypi.org) + [CANable](https://canable.io) *(or similar devices)*
+- [Python 3.11](https://www.python.org)
+- [MySQL](https://www.mysql.com/)
+- [Grafana](https://grafana.com/) _(optional)_
+- [Raspberry Pi](https://www.raspberrypi.org) + [CANable](https://canable.io) _(or similar devices)_
 
 ## Installation
 
-* Download the [latest release](https://github.com/danielbayerlein/sepicker/releases/latest/download/package.zip)
+- Download the [latest release](https://github.com/danielbayerlein/sepicker/releases/latest/download/package.zip)
   ```bash
   wget https://github.com/danielbayerlein/sepicker/releases/latest/download/package.zip
   ```
-* Unzip the package
+- Unzip the package
   ```bash
   unzip package.zip
   ```
-* Install the dependencies
+- Install the dependencies
   ```bash
   pip3 install -r requirements.txt
   ```
 
 ### Cron Job
 
-To collect the data every *x* minutes, it's necessary to create a cron job. This is an example to query the data every two minutes:
+To collect the data every _x_ minutes, it's necessary to create a cron job. This is an example to query the data every two minutes:
 
 ```
 */2 * * * * /home/pi/sepicker/bin/sepicker
@@ -71,7 +68,7 @@ To collect the data every *x* minutes, it's necessary to create a cron job. This
 
 Execute the [seed file](./sepicker/resources/datastore/seed.sql) via MySQL command line or copy the query into your MySQL shell.
 
-### Grafana *(optional)*
+### Grafana _(optional)_
 
 With [Grafana](https://grafana.com/) you can create your own dashboard with widgets or use the existing [template](./sepicker/resources/dashboard/grafana.json).
 
@@ -93,10 +90,10 @@ can:
 
 #### Description
 
-* `interface`: CAN bus interface
-  * `can0`
-* `sender`: Sender ID
-  * `680`
+- `interface`: CAN bus interface
+  - `can0`
+- `sender`: Sender ID
+  - `680`
 
 ### Data
 
@@ -120,14 +117,14 @@ data:
 
 #### Description
 
-* `name`: Name for the data point
-  * `AUSSENTEMPERATUR`
-* `index`: Receiver and Register separated by a dot
-  * `180.000c`
-* `format` *(optional)*:
-  * `dec_val`
-  * `mil_val`
-  * `little_endian`
+- `name`: Name for the data point
+  - `AUSSENTEMPERATUR`
+- `index`: Receiver and Register separated by a dot
+  - `180.000c`
+- `format` _(optional)_:
+  - `dec_val`
+  - `mil_val`
+  - `little_endian`
 
 ### Database
 
@@ -144,9 +141,9 @@ DB_PASSWORD=
 
 ## Resources
 
-* http://juerg5524.ch/list_data.php
-* https://github.com/andig/goelster
-* https://github.com/Andy2003/heat-pump-api
+- http://juerg5524.ch/list_data.php
+- https://github.com/andig/goelster
+- https://github.com/Andy2003/heat-pump-api
 
 ## License
 
