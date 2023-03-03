@@ -18,7 +18,7 @@ mysql-connector = "*"
 python-dotenv = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.11"
 
 [scripts]
 lint = "flake8"
