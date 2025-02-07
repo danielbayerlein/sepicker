@@ -22,15 +22,15 @@ class CanBus:
             LOGGER.error('Can not connect to interface "%s".', self.interface)
             sys.exit(1)
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
+    def __exit__(self):
         self.notifier.stop()
         self.bus.shutdown()
 
     def send(self, data):
         msg = can.Message(
             arbitration_id=self.sender,
-            data=data,
-            extended_id=False
+            is_extended_id=False,
+            data=data
         )
         self.bus.send(msg)
 

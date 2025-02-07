@@ -11,6 +11,6 @@ PARENT_FOLDER = os.path.realpath(
 )
 sys.path.insert(0, PARENT_FOLDER)
 
-from sepicker.__main__ import main  # noqa: E402
+from sepicker.__main__ import main
 
 main()

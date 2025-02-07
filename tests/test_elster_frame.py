@@ -3,12 +3,11 @@ from sepicker.elster.elster_frame import ElsterFrame
 
 
 class TestElsterFrame:
-    def setup(self):
-        self.elster_frame = ElsterFrame(
-            'OUTSIDE_TEMPERATURE',
-            '180.000c',
-            'dec_val'
-        )
+    elster_frame = ElsterFrame(
+        'OUTSIDE_TEMPERATURE',
+        '180.000c',
+        'dec_val'
+    )
 
     def test_message(self):
         assert self.elster_frame.message() == [49, 0, 250, 0, 12]

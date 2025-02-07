@@ -2,9 +2,9 @@ import yaml
 import logging
 import sys
 import os
-import dotenv
+from dotenv import load_dotenv
 
-dotenv.load_dotenv()
+load_dotenv()
 
 LOGGER = logging.getLogger(__name__)
 CONFIG_FILE = 'config.yml'
@@ -12,7 +12,7 @@ CONFIG_FILE = 'config.yml'
 
 def _exists(key, value):
     if value is None:
-        LOGGER.error('Configuration value for "{key}" not found.')
+        LOGGER.error('Configuration value for "%s" not found.', key)
         sys.exit(1)
 
     return value

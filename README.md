@@ -36,7 +36,7 @@
 
 ## Requirements
 
-- [Python 3.11](https://www.python.org)
+- [Python 3.13](https://www.python.org)
 - [MySQL](https://www.mysql.com/)
 - [Grafana](https://grafana.com/) _(optional)_
 - [Raspberry Pi](https://www.raspberrypi.org) + [CANable](https://canable.io) _(or similar devices)_

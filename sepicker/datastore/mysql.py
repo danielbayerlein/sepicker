@@ -21,7 +21,7 @@ class Mysql:
         self.cursor = self.connection.cursor()
         return self
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
+    def __exit__(self):
         self.connection.commit()
         self.cursor.close()
         self.connection.close()
