@@ -6,20 +6,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-LOGGER = logging.getLogger(__name__)
-CONFIG_FILE = 'config.yml'
+logger = logging.getLogger(__name__)
+CONFIG_FILE: str = 'config.yml'
 
 
-def _exists(key, value):
-    if value is None:
-        LOGGER.error('Configuration value for "%s" not found.', key)
-        sys.exit(1)
-
-    return value
-
-
-def _read_config_file():
-    config = os.path.realpath(
+def read_config_file() -> dict:
+    config: str = os.path.realpath(
         os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
             '..',
@@ -29,21 +21,31 @@ def _read_config_file():
     try:
         with open(config, 'r') as file:
             return yaml.full_load(file)
-    except KeyError:
-        LOGGER.error('Configuration file "%s" not valid.', config)
+    except yaml.YAMLError as e:
+        logger.error(f'Configuration file "{config}" not valid: {e}')
         sys.exit(1)
-    except FileNotFoundError:
-        LOGGER.error('Configuration file "%s" not found.', config)
+    except FileNotFoundError as e:
+        logger.error(f'Configuration file "{config}" not found: {e}')
         sys.exit(1)
 
 
-yaml_config = _read_config_file()
-CAN = yaml_config['can']
-DATA = yaml_config['data']
-LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
-DATABASE = {
-    'user': _exists('DB_USER', os.getenv('DB_USER')),
-    'password': _exists('DB_PASSWORD', os.getenv('DB_PASSWORD')),
-    'host': _exists('DB_HOST', os.getenv('DB_HOST')),
-    'database': _exists('DB_DATABASE', os.getenv('DB_DATABASE'))
-}
+def get_mysql_config() -> dict:
+    return {
+        'user': os.getenv('MYSQL_USER'),
+        'password': os.getenv('MYSQL_PASSWORD'),
+        'host': os.getenv('MYSQL_HOST'),
+        'database': os.getenv('MYSQL_DATABASE')
+    }
+
+
+def get_mqtt_config() -> dict:
+    return {
+        'host': os.getenv('MQTT_HOST'),
+        'port': int(os.getenv('MQTT_PORT', '1883')),
+        'topic': os.getenv('MQTT_TOPIC'),
+        'user': os.getenv('MQTT_USER'),
+        'password': os.getenv('MQTT_PASSWORD'),
+    }
+
+
+LOG_LEVEL: str = os.getenv('LOG_LEVEL', 'INFO')

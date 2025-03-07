@@ -4,18 +4,21 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-flake8 = "==7.1.1"
-flake8-bandit = "==4.1.1"
-flake8-bugbear = "==24.12.12"
-pep8-naming = "==0.14.1"
-pytest = "==8.3.4"
-pytest-cov = "==6.0.0"
+flake8 = "*"
+flake8-bandit = "*"
+flake8-bugbear = "*"
+pep8-naming = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+freezegun = "*"
 
 [packages]
-python-can = "==4.5.0"
-pyyaml = "==6.0.2"
-mysql-connector-python = "==9.2.0"
-python-dotenv = "==1.0.1"
+python-can = "*"
+pyyaml = "*"
+mysql-connector-python = "*"
+python-dotenv = "*"
+paho-mqtt = "*"
 
 [requires]
 python_version = "3.13"
