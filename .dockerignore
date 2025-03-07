@@ -1,0 +1,16 @@
+.coverage
+.dockerignore
+.env
+.env.example
+.git
+.github
+.gitignore
+.pytest_cache
+.vscode
+compose.yml
+Dockerfile
+htmlcov
+LICENSE
+README.md
+setup.cfg
+tests
