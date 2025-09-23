@@ -3,7 +3,7 @@ from sepicker.elster.elster_frame import ElsterFrame
 
 
 class TestElsterFrame:
-    def setup(self):
+    def setup_method(self):
         self.elster_frame = ElsterFrame(
             'OUTSIDE_TEMPERATURE',
             '180.000c',

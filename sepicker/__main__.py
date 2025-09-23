@@ -3,22 +3,24 @@ import logging
 
 from .elster.elster import Elster
 from .interface.can_bus import CanBus
-from .datastore.mysql import Mysql as Datastore
+from .datasinks.mysql import Mysql
+from .datasinks.mqtt import Mqtt
 from .config import (
-    CAN as CAN_CONFIG,
-    DATA,
-    DATABASE as DATABASE_CONFIG,
-    LOG_LEVEL
+    LOG_LEVEL,
+    read_config_file,
+    get_mqtt_config,
+    get_mysql_config
 )
 
 logging.basicConfig(level=LOG_LEVEL)
 
 
 def main():
-    elster = Elster(sender=CAN_CONFIG['sender'], items=DATA)
+    config = read_config_file()
+    elster = Elster(sender=config['can']['sender'], items=config['data'])
 
-    with CanBus(**CAN_CONFIG) as can_bus:
-        can_bus.notifier(elster.listener)
+    with CanBus(**config['can']) as can_bus:
+        can_bus.set_notifier(elster.listener)
 
         for frame in elster.frames:
             can_bus.send(frame.message())
@@ -35,8 +37,15 @@ def main():
                 break
 
     # Save result
-    with Datastore(**DATABASE_CONFIG) as db:
-        db.save(elster.values)
+    mysql_config = get_mysql_config()
+    if mysql_config['host']:
+        with Mysql(**mysql_config) as db:
+            db.save(elster.values)
+
+    mqtt_config = get_mqtt_config()
+    if mqtt_config['host']:
+        with Mqtt(**mqtt_config) as mqtt:
+            mqtt.publish(elster.values)
 
 
 if __name__ == '__main__':

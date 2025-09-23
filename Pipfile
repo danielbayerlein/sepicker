@@ -10,15 +10,18 @@ flake8-bugbear = "*"
 pep8-naming = "*"
 pytest = "*"
 pytest-cov = "*"
+pytest-mock = "*"
+freezegun = "*"
 
 [packages]
 python-can = "*"
 pyyaml = "*"
-mysql-connector = "*"
+mysql-connector-python = "*"
 python-dotenv = "*"
+paho-mqtt = "*"
 
 [requires]
-python_version = "3.11"
+python_version = "3.13"
 
 [scripts]
 lint = "flake8"

@@ -19,10 +19,9 @@
 ## Table of Contents
 
 - [Requirements](#requirements)
+- [Integrations](#integrations)
 - [Installation](#installation)
   - [Cron Job](#cron-job)
-  - [Database](#database)
-  - [Grafana <em>(optional)</em>](#grafana-optional)
 - [Config](#config)
   - [CAN bus](#can-bus)
     - [Example](#example)
@@ -30,16 +29,29 @@
   - [Data](#data)
     - [Example](#example-1)
     - [Description](#description-1)
-  - [Database](#database-1)
+  - [MySQL](#mysql)
+    - [Grafana](#grafana)
+  - [MQTT](#mqtt)
 - [Resources](#resources)
 - [License](#license)
 
 ## Requirements
 
-- [Python 3.11](https://www.python.org)
-- [MySQL](https://www.mysql.com/)
-- [Grafana](https://grafana.com/) _(optional)_
+- [Python 3.13](https://www.python.org)
 - [Raspberry Pi](https://www.raspberrypi.org) + [CANable](https://canable.io) _(or similar devices)_
+- Optional
+  - [MySQL](https://www.mysql.com)
+  - [MQTT](https://mqtt.org)
+  - [Grafana](https://grafana.com)
+
+## Integrations
+
+sepicker provides the following integrations:
+
+- MySQL
+- MQTT
+
+Choose the right one for you. If you miss an integration, feel free to create an issue or PR.
 
 ## Installation
 
@@ -63,14 +75,6 @@ To collect the data every _x_ minutes, it's necessary to create a cron job. This
 ```
 */2 * * * * /home/pi/sepicker/bin/sepicker
 ```
-
-### Database
-
-Execute the [seed file](./sepicker/resources/datastore/seed.sql) via MySQL command line or copy the query into your MySQL shell.
-
-### Grafana _(optional)_
-
-With [Grafana](https://grafana.com/) you can create your own dashboard with widgets or use the existing [template](./sepicker/resources/dashboard/grafana.json).
 
 ## Config
 
@@ -126,17 +130,33 @@ data:
   - `mil_val`
   - `little_endian`
 
-### Database
+### MySQL
 
-File: [.env](./.env.example)
-
-Rename the `.env.example` file to `.env` or create it with the following content:
+Rename the [`.env.example`](./.env.example) file to `.env` or create it with the following content:
 
 ```
-DB_DATABASE=heat-pump
-DB_HOST=127.0.0.1
-DB_USER=root
-DB_PASSWORD=
+MYSQL_DATABASE=sepicker
+MYSQL_HOST=127.0.0.1
+MYSQL_USER=root
+MYSQL_PASSWORD=
+```
+
+Execute the [seed file](./sepicker/resources/mysql/seed.sql) via MySQL command line or copy the query into your MySQL shell.
+
+#### Grafana
+
+With [Grafana](https://grafana.com) you can create your own dashboard with widgets or use the existing [template](./sepicker/resources/grafana/dashboard.json).
+
+### MQTT
+
+Rename the [`.env.example`](./.env.example) file to `.env` or create it with the following content:
+
+```
+MQTT_HOST=127.0.0.1
+MQTT_PORT=1883
+MQTT_TOPIC=sepicker
+MQTT_USER=
+MQTT_PASSWORD=
 ```
 
 ## Resources
@@ -144,6 +164,7 @@ DB_PASSWORD=
 - http://juerg5524.ch/list_data.php
 - https://github.com/andig/goelster
 - https://github.com/Andy2003/heat-pump-api
+- https://elkement.art/2016/08/24/hacking-my-heat-pump-part-2-logging-energy-values/
 
 ## License
 

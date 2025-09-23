@@ -1,0 +1,1 @@
+*/2 * * * * /usr/src/app/bin/sepicker >> /var/log/cron.log 2>&1
